@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { RoutesPage } from "./routes/RoutesPage"
 
 function App() {
   useEffect(() => {
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <>
-      <h1>teste</h1>
+      <RoutesPage/>
     </>
   )
 }
