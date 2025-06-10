@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@layer base {
+  :root {
+    --color-bg: #fff;
+    --color-text: #000;
+    --color-primary: #1a73e8;
+  }
+  .dark {
+    --color-bg: #121212;
+    --color-text: #e0e0e0;
+    --color-primary: #bb86fc;
+  }
+  
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: sans-serif;
+  }
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
