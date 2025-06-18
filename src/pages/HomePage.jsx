@@ -1,7 +1,5 @@
-// src/pages/HomePage.jsx
-
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importe o Link para o botão
+import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaArrowRight } from 'react-icons/fa';
 
 
@@ -24,7 +22,7 @@ const HomePage = () => {
             </h1>
             
         
-            <Link to="/cadastro" className="inline-flex items-center justify-center px-8 py-4 font-semibold text-white bg-indigo-600 rounded-lg-1x1 hover:bg-indigo-700 transition-colors">
+            <Link to="/dashboard" className="inline-flex items-center justify-center px-8 py-4 font-semibold text-white bg-indigo-600 rounded-lg-1x1 hover:bg-indigo-700 transition-colors">
              Consultar <FaArrowRight className="ml-2" />
             </Link>
           </div>

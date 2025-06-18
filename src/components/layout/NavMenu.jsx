@@ -23,7 +23,7 @@ export const NavMenu = () => {
               Login
             </Link>
             <Link
-              to="/cadastro"
+              to="/dashboard"
               className="flex items-center justify-center px-4 py-2 font-semibold text-white bg-indigo-600 border border-transparent rounded lg-1x1 hover:bg-indigo-700 transition-all duration-300"
             >
               DashBoard

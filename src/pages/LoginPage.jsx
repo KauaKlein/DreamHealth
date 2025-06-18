@@ -1,15 +1,30 @@
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { z } from "zod"; 
+import { loginSchema } from "../schema/acesso";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Tentativa de login com:", { email, password });
-    alert(`Tentativa de login com o email: ${email}`);
+    try {
+      loginSchema.parse({ email, password });
+
+    } catch (validationError) {
+      const newErrors = {};
+      if (validationError instanceof z.ZodError) { 
+        validationError.errors.forEach((error) => {
+          newErrors[error.path[0]] = error.message;
+        });
+      }
+      setErrors(newErrors);
+      console.error("Erros de validação:", newErrors);
+    }
   };
 
   return (
@@ -25,7 +40,7 @@ export const LoginPage = () => {
           <p className="text-gray-500 mt-2">Seja bem-vindo(a) de volta!</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6" noValidate>
           <div>
             <label
               htmlFor="email"
@@ -41,8 +56,14 @@ export const LoginPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="clinica@gmail.com"
-              className="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              
+              className={`mt-1 block w-full px-4 py-3 bg-gray-50 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 ${
+                  errors.email ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'
+              }`}
             />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+            )}
           </div>
 
           <div>
@@ -60,9 +81,19 @@ export const LoginPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="*******"
-              className="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              // Adicione a classe condicional para borda vermelha em caso de erro
+              className={`mt-1 block w-full px-4 py-3 bg-gray-50 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 ${
+                  errors.password ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'
+              }`}
             />
+            {errors.password && (
+              <p className="mt-1 text-sm text-red-500">{errors.password}</p>
+            )}
           </div>
+
+          {errors.api && (
+            <p className="mt-1 text-sm text-red-500 text-center">{errors.api}</p>
+          )}
 
           <div>
             <button

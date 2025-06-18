@@ -9,8 +9,6 @@ export const Layout = () =>{
             <main>
                 <Outlet/>
             </main>
-
-            {/* implementação do footer */}
         </div>
     )
 }
