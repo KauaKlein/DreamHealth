@@ -5,10 +5,10 @@ import { LinksRoutes } from "../links/LinksRoutes";
 
 export const NavMenu = () => {
   return (
-    <header className="bg-white/95 sticky top-0 z-40 border-b border-gray-200">
+    <header className="flex flex-row justify-center items-center bg-[var(--color-nav)] sticky top-0 z-40 w-dvw h-[11%]">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link to="/" className="text-3xl font-bold text-indigo-600">
+          <Link to="/" className="text-3xl font-bold text-[var(--color-primary)]">
             DreamHealth
           </Link>
 
@@ -24,7 +24,7 @@ export const NavMenu = () => {
             </Link>
             <Link
               to="/cadastro"
-              className="flex items-center justify-center px-4 py-2 font-semibold text-white bg-indigo-600 border border-transparent rounded lg-1x1 hover:bg-indigo-700 transition-all duration-300"
+              className="flex items-center justify-center px-4 py-2 font-semibold text-white bg-[var(--color-primary)] border border-transparent rounded lg-1x1 hover:bg-[var(--color-hover)] transition-all duration-300"
             >
               DashBoard
             </Link>

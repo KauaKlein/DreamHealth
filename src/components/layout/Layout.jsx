@@ -3,10 +3,10 @@ import { NavMenu } from "./NavMenu"
 
 export const Layout = () =>{
     return(
-        <div>
+        <div className="w-dvw h-dvh">
             <NavMenu/>
 
-            <main>
+            <main className=" w-dvw h-[89%]">
                 <Outlet/>
             </main>
 
