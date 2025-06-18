@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle, FaArrowRight } from "react-icons/fa";
-import { LinksRoutes } from "../links/LinksRoutes";
 
 export const NavMenu = () => {
   return (
@@ -11,8 +10,6 @@ export const NavMenu = () => {
           <Link to="/" className="text-3xl font-bold text-indigo-600">
             DreamHealth
           </Link>
-
-          <LinksRoutes />
 
           <div className="flex items-center space-x-4">
             <Link
