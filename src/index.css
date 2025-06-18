@@ -6,14 +6,19 @@
     --color-nav: #d4e9f3;
     --color-text: #000;
     --color-primary: #3886ec;
-    --color-hover: #5c9ff7;
+    --color-hover: #6aaaff;
+    --color-input:#d6e1e6 ;
+    --color-text-input: #838383 ;
   }
   .dark {
     --color-bg: #26232e;
     --color-nav: #1e1c29;
     --color-text: #e0e0e0;
+    --color-text-secondary: #dddcdc;
     --color-primary: #773dff;
-    --color-hover: #6320ff;
+    --color-hover: #6727fc;
+    --color-input:#3e3a4b ;
+    --color-text-input:#999999 ;
   }
   
   body {
