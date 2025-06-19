@@ -1,64 +1,14 @@
 
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaThLarge,FaUserMd,FaUserInjured,FaCalendarAlt,FaSignOutAlt,FaSignInAlt,FaChartBar, } from 'react-icons/fa'; 
+import { FaUserMd,FaUserInjured,FaCalendarAlt,FaChartBar, } from 'react-icons/fa'; 
 
 
 export const DashBoardPage = () => { 
   return (
     <div className="min-h-screen bg-gray-100 flex font-sans">
-
-      <aside className="bg-indigo-900 text-white w-64 flex flex-col shadow-lg">
-        <div className="p-4 py-6 flex flex-col items-center justify-center border-b border-indigo-800">
-          <span className="text-3xl font-bold">Dream<span className="text-indigo-300">Health</span></span>
-        </div>
-        
-        <nav className="flex-grow p-4 space-y-2">
-          <div className="text-gray-300 uppercase text-xs font-semibold mb-2 ml-4">Menu</div>
-          
-    
-          <Link to="/dashboard" className="flex items-center py-2 px-4 rounded-lg bg-indigo-700 text-white shadow-md transition-all duration-200 ease-in-out">
-            <FaThLarge className="mr-3 text-lg" />
-            Dashboard
-          </Link>
-
-          <Link to="/" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
-            <FaUserMd className="mr-3 text-lg" />
-            Médico
-          </Link>
-          <Link to="/" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
-            <FaUserInjured className="mr-3 text-lg" />
-            Paciente
-          </Link>
-          <Link to="/" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
-            <FaCalendarAlt className="mr-3 text-lg" />
-            Agenda do Médico
-          </Link>
-          <Link to="/" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
-            <FaCalendarAlt className="mr-3 text-lg" />
-            Consulta do Paciente
-          </Link>
-          <Link to="/login" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
-            <FaSignInAlt className="mr-3 text-lg" />
-            Deslogar
-          </Link>
-        </nav>
-        <div className="p-4 mt-auto border-t border-indigo-800">
-          <Link to="/logout" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
-            <FaSignOutAlt className="mr-3 text-lg" />
-            Sair
-          </Link>
-        </div>
-      </aside>
-
- 
       <div className="flex-grow p-6">
      
-        <header className="bg-white shadow-md p-4 flex justify-between items-center mb-6 rounded-lg">
-          <div className="flex items-center">
-          </div>
-        </header>
+        
         <div className="mb-6">
           <h1 className="text-3xl font-bold text-gray-800 mb-6">Dashboard</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4 mb-6">

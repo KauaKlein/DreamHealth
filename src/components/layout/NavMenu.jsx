@@ -1,36 +1,55 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaUserCircle, FaArrowRight } from "react-icons/fa";
-import { LinksRoutes } from "../links/LinksRoutes";
+
+import { Link } from 'react-router-dom';
+import { FaThLarge,FaUserMd,FaUserInjured,FaCalendarAlt,FaSignOutAlt,FaSignInAlt,FaHome } from 'react-icons/fa'; 
 
 export const NavMenu = () => {
-  return (
-    <header className="bg-white/95 sticky top-0 z-40 border-b border-gray-200">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <Link to="/" className="text-3xl font-bold text-indigo-600">
-            DreamHealth
+ return( 
+      <div className="bg-indigo-900 text-white w-64 flex flex-col shadow-lg">
+        <div className="p-4 py-6 flex flex-col items-center justify-center border-b border-indigo-800">
+          <span className="text-3xl font-bold">Dream<span className="text-indigo-300">Health</span></span>
+        </div>
+        
+        <nav className="flex-grow p-4 space-y-2">
+          <div className="text-gray-300 uppercase text-xs font-semibold mb-2 ml-4">Menu</div>
+          
+    
+          <Link to="/" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
+            <FaHome className="mr-3 text-lg" />
+            Home
+          </Link>
+          <Link to="/dashboard" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
+            <FaThLarge className="mr-3 text-lg" />
+            Dashboard
           </Link>
 
-          <LinksRoutes />
-
-          <div className="flex items-center space-x-4">
-            <Link
-              to="/login"
-              className="hidden sm:flex items-center justify-center px-2.5 py-2 font-semibold text-gray-700 bg-white border border-gray-300 rounded lg-1x1 hover:bg-gray-100 transition-colors"
-            >
-              <FaUserCircle className="mr-2" />
-              Login
-            </Link>
-            <Link
-              to="/dashboard"
-              className="flex items-center justify-center px-4 py-2 font-semibold text-white bg-indigo-600 border border-transparent rounded lg-1x1 hover:bg-indigo-700 transition-all duration-300"
-            >
-              DashBoard
-            </Link>
-          </div>
+          <Link to="/" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
+            <FaUserMd className="mr-3 text-lg" />
+            Médico
+          </Link>
+          <Link to="/consultar" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
+            <FaUserInjured className="mr-3 text-lg" />
+            Paciente
+          </Link>
+          <Link to="/" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
+            <FaCalendarAlt className="mr-3 text-lg" />
+            Agenda do Médico
+          </Link>
+          <Link to="/" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
+            <FaCalendarAlt className="mr-3 text-lg" />
+            Consulta do Paciente
+          </Link>
+          <Link to="/login" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
+            <FaSignInAlt className="mr-3 text-lg" />
+            Login
+          </Link>
+         
+        </nav>
+        <div className="p-4 mt-auto border-t border-indigo-800">
+          <Link to="/logout" className="flex items-center py-2 px-4 rounded-lg text-gray-300 hover:bg-indigo-800 hover:text-white transition-all duration-200 ease-in-out">
+            <FaSignOutAlt className="mr-3 text-lg" />
+            Sair
+          </Link>
         </div>
       </div>
-    </header>
-  );
+      );
 };
