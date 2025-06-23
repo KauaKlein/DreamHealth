@@ -30,9 +30,7 @@ export const LoginPage = () => {
       <div className="w-full max-w-md bg-[var(--color-bg-secondary)] rounded-2xl shadow-2xl p-8 space-y-6">
         <div className="text-center">
           <Link to="/">
-            <h1 className="text-4xl font-bold text-[var(--color-primary)]">
-              DreamHealth
-            </h1>
+          <h1 className="text-4xl font-bold text-[var(--color-text-secondary)]">Dream<span className="text-[var(--color-text)]">Health</span></h1>
           </Link>
           <h2 className="text-2xl font-bold text-[var(--color-text)] mt-4">
             Entre em sua conta
@@ -107,7 +105,7 @@ export const LoginPage = () => {
           Não tem uma conta?{" "}
           <Link
             to="/cadastro"
-            className="font-medium text-[var(--color-primary)] hover:text-[var(--color-hover)] hover:underline"
+            className="font-bold text-[var(--color-primary)] hover:text-[var(--color-hover)] hover:underline"
           >
             Cadastre-se
           </Link>
