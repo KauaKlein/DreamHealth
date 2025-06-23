@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage";
 import { LoginPage } from "../pages/LoginPage";
 import { CadastroPage } from "../pages/CadastroPage";
 import { DashBoardPage } from "../pages/DashBoardPage";
+import Consultar from "../pages/Consultar.jsx";
 
 export const RoutesPage = () =>{
 
@@ -13,11 +14,12 @@ export const RoutesPage = () =>{
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<HomePage/>}/>
                     <Route path="/dashBoard" element={<DashBoardPage/>}/>
+                    <Route path="/consultar" element={<Consultar/>}/>
                 </Route>
-                <Route>
-                    <Route path="/login" element={<LoginPage/>}/>
+                
                     <Route path="/cadastro" element={<CadastroPage/>}/>
-                </Route>
+                    <Route path="/login" element={<LoginPage/>}/>
+                
             </Routes>
         </BrowserRouter>
     );

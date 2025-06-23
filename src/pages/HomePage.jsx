@@ -1,49 +1,61 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaWhatsapp, FaArrowRight } from "react-icons/fa";
-
-const imageUrl = "./assets/consultorio.jpg";
+import { FiHeart, FiUserCheck, FiFileText } from "react-icons/fi";
 
 const HomePage = () => {
   return (
-    <div className="font-sans w-dvw h-[100%]">
-      <div className="container mx-auto max-w px-4 h-[85%]">
-        <main className="flex flex-row items-center justify-center gap-12 h-[100%]">
-          <div className="flex flex-col w-[50%] text-center md:text-left gap-2">
-            <p className="text-md font-semibold text-gray-500">
-              SISTEMA PARA CLÍNICAS E CONSULTÓRIOS
+    <div className=" py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center">
+          <h2 className="text-base font-semibold text-[var(--color-primary)] tracking-wide uppercase">
+            Nossos Serviços
+          </h2>
+          <p className="mt-2 text-3xl font-extrabold text-[var(--color-text)] sm:text-4xl">
+            Cuidado completo para o seu bem-estar
+          </p>
+          <p className="mt-4 max-w-2xl mx-auto text-xl text-[var(--color-text-secondary)]">
+            Soluções integradas de saúde, da prevenção ao diagnóstico preciso.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="bg-[var(--color-bg-secondary)] rounded-2xl shadow-soft-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+            <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-[var(--color-primary)] text-[var(--color-text-secondary)] mb-6">
+              <FiUserCheck className="w-8 h-8" />
+            </div>
+            <h3 className="text-2xl font-bold text-[var(--color-text)]">
+              Consultas Médicas
+            </h3>
+            <p className="mt-4 text-[var(--color-text-secondary)]">
+              Atendimento com clínicos gerais e especialistas para um
+              acompanhamento contínuo e focado na sua saúde.
             </p>
-            <h1 className="text-4xl font-bold text-[var(--color-text)] mb-7">
-              Marque consultas, veja seus resultados e fale com o médico, tudo
-              em um só lugar. Tenha o controle na palma da sua mão com a
-              facilidade que você merece.
-            </h1>
-            <Link
-              to="/cadastro"
-              className="flex flex-row items-center justify-center w-[40%] h-[50px] rounded-lg font-semibold text-white bg-[var(--color-primary)] rounded-lg-1x1 hover:bg-[var(--color-hover)] duration-300 transition"
-            >
-              Consultar <FaArrowRight className="ml-2" />
-            </Link>
           </div>
-          <div className="w-[50%] mt-8 md:mt-0">
-            <img
-              src={imageUrl}
-              alt="Doutora utilizando o sistema em um notebook"
-              className="w-full h-full rounded-xl"
-            />
+
+          <div className="bg-[var(--color-bg-secondary)] rounded-2xl shadow-soft-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+            <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-[var(--color-primary)] text-[var(--color-text-secondary)] mb-6">
+              <FiHeart className="w-8 h-8" />
+            </div>
+            <h3 className="text-2xl font-bold text-[var(--color-text)]">
+              Saúde Mental
+            </h3>
+            <p className="mt-4 text-[var(--color-text-secondary)]">
+              Sessões de psicologia e psiquiatria para promover o equilíbrio
+              emocional e o bem-estar mental.
+            </p>
           </div>
-        </main>
-      </div>
-      <div className="flex flex-row justify-end mr-10 h-[15%]">
-        <a
-          href="https://wa.me/48996665664"
-          className=" bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 hover:scale-110 transition-all duration-300"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Fale conosco no WhatsApp"
-        >
-          <FaWhatsapp size={45} />
-        </a>
+
+          <div className="bg-[var(--color-bg-secondary)] rounded-2xl shadow-soft-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+            <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-[var(--color-primary)] text-[var(--color-text-secondary)] mb-6">
+              <FiFileText className="w-8 h-8" />
+            </div>
+            <h3 className="text-2xl font-bold text-[var(--color-text)]">
+              Exames e Diagnóstico
+            </h3>
+            <p className="mt-4 text-[var(--color-text-secondary)]">
+              Realização de exames laboratoriais e de imagem com tecnologia de
+              ponta para um diagnóstico rápido e preciso.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

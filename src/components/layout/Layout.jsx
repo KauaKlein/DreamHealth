@@ -1,16 +1,13 @@
-import { Outlet } from "react-router-dom"
-import { NavMenu } from "./NavMenu"
+import { Outlet } from "react-router-dom";
+import { NavMenu } from "./NavMenu";
 
-export const Layout = () =>{
-    return(
-        <div className="w-dvw h-dvh">
-            <NavMenu/>
-
-            <main className=" w-dvw h-[89%]">
-                <Outlet/>
-            </main>
-
-            {/* implementação do footer */}
-        </div>
-    )
-}
+export const Layout = () => {
+  return (
+    <div className="min-h-screen flex">
+      <NavMenu />
+      <main className="flex-1 bg-[var(--color-bg)] p-4 sm:p-6 lg:p-8">
+        <Outlet />
+      </main>
+    </div>
+  );
+};

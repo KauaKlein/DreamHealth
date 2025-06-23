@@ -2,21 +2,24 @@
 
 @layer base {
   :root {
-    --color-bg: #ecf9ff;
+    --color-bg: #deeef8;
+    --color-bg-secondary:#ecf9ff;
     --color-nav: #d4e9f3;
-    --color-text: #000;
-    --color-primary: #3886ec;
-    --color-hover: #6aaaff;
+    --color-text: #2f3574;
+    --color-text-secondary: #000000;
+    --color-primary: #488feb;
+    --color-hover: #98c5ff;
     --color-input:#d6e1e6 ;
     --color-text-input: #838383 ;
   }
   .dark {
     --color-bg: #26232e;
+    --color-bg-secondary: #3a344b;
     --color-nav: #1e1c29;
-    --color-text: #e0e0e0;
-    --color-text-secondary: #dddcdc;
-    --color-primary: #773dff;
-    --color-hover: #6727fc;
+    --color-text: #bea3f8;
+    --color-text-secondary: #e0e0e0 ;
+    --color-primary: #5444ca;
+    --color-hover: #403781;
     --color-input:#3e3a4b ;
     --color-text-input:#999999 ;
   }
@@ -34,7 +37,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #242424;
   background-color: #242424;
 
   font-synthesis: none;
