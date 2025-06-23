@@ -8,6 +8,7 @@ import {
   FaSignInAlt,
   FaHome,
 } from "react-icons/fa";
+import { BotaoMode } from "../BotaoMode/BotaoMode.jsx";
 
 export const NavMenu = () => {
   return (
@@ -73,6 +74,7 @@ export const NavMenu = () => {
           <FaSignInAlt className="mr-3 text-lg" />
           Login
         </Link>
+        <BotaoMode/>
       </nav>
       <div className="p-4 mt-auto">
         <Link
