@@ -12,15 +12,15 @@ import { BotaoMode } from "../BotaoMode/BotaoMode.jsx";
 
 export const NavMenu = () => {
   return (
-    <div className="bg-[var(--color-primary)] text-white w-64 flex flex-col shadow-lg">
+    <div className="bg-[var(--color-primary)] text-white w-64 flex flex-col shadow-lg duration-700 ease-out">
       <div className="p-4 py-6 flex flex-col items-center justify-center">
         <span className="text-3xl font-bold">
-          Dream<span className="text-[var(--color-text)]">Health</span>
+          Dream<span className="text-[var(--color-text)] duration-700 ease-out">Health</span>
         </span>
       </div>
 
       <nav className="flex-grow p-4 space-y-2">
-        <div className="text-white uppercase text-xs font-semibold mb-2 ml-4">
+        <div className="text-white uppercase text-xs font-semibold mb-2 ml-4 ">
           Menu
         </div>
 

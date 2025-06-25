@@ -26,6 +26,7 @@
 
   body {
     background-color: var(--color-bg);
+    transition: 500ms ease-out;
     color: var(--color-text);
     font-family: sans-serif;
   }
