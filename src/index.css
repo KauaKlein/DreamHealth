@@ -26,8 +26,11 @@
 
   body {
     background-color: var(--color-bg);
-    transition: 500ms ease-out;
     color: var(--color-text);
+    transition: background-color 0.3s ease-in-out;
     font-family: sans-serif;
+  }
+  div, h1, h2, h3, p, span, button, form, input {
+    transition: 0.3s ease-in-out;
   }
 }

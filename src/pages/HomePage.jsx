@@ -16,8 +16,8 @@ const HomePage = () => {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          <div className="bg-[var(--color-bg-secondary)] rounded-2xl shadow-soft-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+        <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-3 ">
+          <div className="bg-[var(--color-bg-secondary)] rounded-2xl shadow-soft-lg p-8  transform hover:-translate-y-2 transition-all duration-400 ease-in-out">
             <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-[var(--color-primary)] text-[var(--color-text-secondary)] mb-6">
               <FiUserCheck className="w-8 h-8" />
             </div>
@@ -30,7 +30,7 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="bg-[var(--color-bg-secondary)] rounded-2xl shadow-soft-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+          <div className="bg-[var(--color-bg-secondary)] rounded-2xl shadow-soft-lg p-8 transform hover:-translate-y-2 transition-all duration-400 ease-in-out">
             <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-[var(--color-primary)] text-[var(--color-text-secondary)] mb-6">
               <FiHeart className="w-8 h-8" />
             </div>
@@ -43,7 +43,7 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="bg-[var(--color-bg-secondary)] rounded-2xl shadow-soft-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+          <div className="bg-[var(--color-bg-secondary)] rounded-2xl shadow-soft-lg p-8 transform hover:-translate-y-2 transition-all duration-400 ease-in-out">
             <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-[var(--color-primary)] text-[var(--color-text-secondary)] mb-6">
               <FiFileText className="w-8 h-8" />
             </div>

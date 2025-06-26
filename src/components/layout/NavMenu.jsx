@@ -12,10 +12,10 @@ import { BotaoMode } from "../BotaoMode/BotaoMode.jsx";
 
 export const NavMenu = () => {
   return (
-    <div className="bg-[var(--color-primary)] text-white w-64 flex flex-col shadow-lg duration-700 ease-out">
+    <div className="bg-[var(--color-primary)] text-white w-64 flex flex-col shadow-lg">
       <div className="p-4 py-6 flex flex-col items-center justify-center">
         <span className="text-3xl font-bold">
-          Dream<span className="text-[var(--color-text)] duration-700 ease-out">Health</span>
+          Dream<span className="text-[var(--color-text)]">Health</span>
         </span>
       </div>
 
@@ -26,14 +26,14 @@ export const NavMenu = () => {
 
         <Link
           to="/"
-          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-200 ease-in-out"
+          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-400"
         >
           <FaHome className="mr-3 text-lg" />
           Home
         </Link>
         <Link
           to="/dashboard"
-          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-200 ease-in-out"
+          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-400"
         >
           <FaThLarge className="mr-3 text-lg" />
           Dashboard
@@ -41,35 +41,35 @@ export const NavMenu = () => {
 
         <Link
           to="/"
-          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-200 ease-in-out"
+          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-400"
         >
           <FaUserMd className="mr-3 text-lg" />
           Médico
         </Link>
         <Link
           to="/consultar"
-          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-200 ease-in-out"
+          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-400"
         >
           <FaUserInjured className="mr-3 text-lg" />
           Paciente
         </Link>
         <Link
           to="/"
-          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-200 ease-in-out"
+          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-400"
         >
           <FaCalendarAlt className="mr-3 text-lg" />
           Agenda do Médico
         </Link>
         <Link
           to="/"
-          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-200 ease-in-out"
+          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-400"
         >
           <FaCalendarAlt className="mr-3 text-lg" />
           Consulta do Paciente
         </Link>
         <Link
           to="/login"
-          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-200 ease-in-out"
+          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-400"
         >
           <FaSignInAlt className="mr-3 text-lg" />
           Login
@@ -79,7 +79,7 @@ export const NavMenu = () => {
       <div className="p-4 mt-auto">
         <Link
           to="/logout"
-          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-200 ease-in-out"
+          className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-400"
         >
           <FaSignOutAlt className="mr-3 text-lg" />
           Sair

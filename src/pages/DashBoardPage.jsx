@@ -14,7 +14,7 @@ export const DashBoardPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4 mb-6">
 
 
-            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-4 flex items-center justify-between transition-transform transform hover:scale-105 duration-200">
+            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-4 flex items-center justify-between transition-all transform hover:scale-105 duration-400">
               <div>
                 <div className="text-[var(--color-text)] text-sm">Médicos</div>
                 <div className="text-3xl font-bold text-[var(--color-text-secondary)]">14</div>
@@ -24,7 +24,7 @@ export const DashBoardPage = () => {
               </div>
             </div>
 
-            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-4 flex items-center justify-between transition-transform transform hover:scale-105 duration-200">
+            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-4 flex items-center justify-between transition-all transform hover:scale-105 duration-400">
               <div>
                 <div className="text-[var(--color-text)] text-sm">Pacientes</div>
                 <div className="text-3xl font-bold text-[var(--color-text-secondary)]">1</div>
@@ -34,7 +34,7 @@ export const DashBoardPage = () => {
               </div>
             </div>
 
-            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-4 flex items-center justify-between transition-transform transform hover:scale-105 duration-200">
+            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-4 flex items-center justify-between transition-all transform hover:scale-105 duration-400">
               <div>
                 <div className="text-[var(--color-text)] text-sm">Consultas</div>
                 <div className="text-3xl font-bold text-[var(--color-text-secondary)]">3</div>
