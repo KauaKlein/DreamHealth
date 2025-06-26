@@ -37,7 +37,7 @@ export const NavMenu = () => {
   return (
     <>
       {/* Botão de menu (só aparece em telas pequenas) */}
-      <div className={`md:hidden p-4 fixed text-white flex justify-between items-center z-50 top-2 left-2 ${!menuOpen ? "bg-[var(--color-primary)]" : "bg-none"} rounded-xl duration-0`}>
+      <div className={`min-[769px]:hidden p-4 fixed text-white flex justify-between items-center z-50 top-2 left-2 ${!menuOpen ? "bg-[var(--color-primary)]" : "bg-none"} rounded-xl duration-0`}>
         <button onClick={toggleMenu} className="text-2xl">
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -47,7 +47,7 @@ export const NavMenu = () => {
       
       <div
         className={`bg-[var(--color-primary)] text-white w-64 flex flex-col shadow-lg fixed top-0 left-0 h-full transform transition-transform duration-400
-          ${menuOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static md:h-auto`}
+          ${menuOpen ? "translate-x-0" : "-translate-x-full"} min-[769px]:translate-x-0 min-[769px]:static min-[769px]:h-auto`}
       >
         <div className={`p-4 py-6 flex flex-col items-center justify-center ${menuOpen ? "mt-10" : "mt-0"}`}>
           <span className="text-3xl font-bold">

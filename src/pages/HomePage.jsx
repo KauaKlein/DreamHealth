@@ -2,8 +2,8 @@ import { FiHeart, FiUserCheck, FiFileText } from "react-icons/fi";
 
 const HomePage = () => {
   return (
-    <div className=" py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="w-full h-full">
+      <div className="w-full h-full max-w-7xl mx-auto flex flex-col justify-center items-center lg:p-10 md:p-8 sm:p-6 p-4">
         <div className="text-center">
           <h2 className="text-base font-semibold text-[var(--color-primary)] tracking-wide">
             NOSSOS SERVIÇOS
@@ -16,7 +16,7 @@ const HomePage = () => {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-3 ">
+        <div className="mt-12 grid gap-10 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
           <div className="bg-[var(--color-bg-secondary)] rounded-2xl shadow-soft-lg p-8  transform hover:-translate-y-2 transition-all duration-400 ease-in-out">
             <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-[var(--color-primary)] text-[var(--color-text-secondary)] mb-6">
               <FiUserCheck className="w-8 h-8" />
