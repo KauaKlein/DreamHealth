@@ -7,7 +7,7 @@ import {
 
 export const DashBoardPage = () => {
   return (
-    <div className="min-h-screen flex font-sans sm:pt-15 md:pt-0 lg:pt-0 xl:pt-0 pt-15">
+    <div className="min-h-screen flex font-sans sm:mt-15 md:mt-15 lg:mt-0 xl:mt-0 mt-15">
       <div className="flex-grow p-6">
         <div>
           <h1 className="text-3xl font-bold text-[var(--color-text)] mb-6">

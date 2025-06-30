@@ -32,12 +32,22 @@ function App() {
     // Verifica o tema salvo no localStorage
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
-      document.documentElement.classList.toggle("dark", savedTheme === "dark");
+      // Aplica o tema salvo
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
     } else {
       // Detecta a preferência do sistema
       const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.classList.toggle("dark", prefersDarkMode);
-      localStorage.setItem("theme", prefersDarkMode ? "dark" : "light");
+      if (prefersDarkMode) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
     }
   }, []);
 

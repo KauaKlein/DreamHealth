@@ -2,7 +2,7 @@ import { FiHeart, FiUserCheck, FiFileText } from "react-icons/fi";
 
 const HomePage = () => {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full lg:mt-0 md:mt-5 sm:mt-8 mt-10">
       <div className="w-full h-full max-w-7xl mx-auto flex flex-col justify-center items-center lg:p-10 md:p-8 sm:p-6 p-4">
         <div className="text-center">
           <h2 className="text-base font-semibold text-[var(--color-primary)] tracking-wide">

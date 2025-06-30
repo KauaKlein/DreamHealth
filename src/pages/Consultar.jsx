@@ -1,7 +1,7 @@
 const Consultar = () => {
   return (
-    <div className="bg-[var(--color-bg-secondary)] p-8 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold text-[var(--color-text)] mb-6">Acesso Rápido</h2>
+    <div className="p-5 lg:mt-0 md:mt-15 sm:mt-15 mt-15">
+      <h2 className="text-3xl font-bold text-[var(--color-text)] mb-6">Acesso Rápido</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <button className="bg-[var(--color-primary)] text-white font-bold py-4 px-6 rounded-lg hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] duration-400 transition-all text-left">
           <span className="text-xl">+ Agendar Nova Consulta</span>

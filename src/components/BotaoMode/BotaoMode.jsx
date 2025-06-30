@@ -1,17 +1,24 @@
 import { useState } from "react";
 
 export const BotaoMode = () => {
-  const prefersDarkMode = window.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches;
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDarkMode = savedTheme
+    ? savedTheme === "dark"
+    : window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [darkMode, setDarkMode] = useState(prefersDarkMode);
 
   const toggleTheme = () => {
+    const newTheme = darkMode ? "light" : "dark";
     setDarkMode(!darkMode);
-    if (darkMode) {
-      document.documentElement.classList.remove("dark");
-    } else {
+
+    // Atualiza o tema no localStorage
+    localStorage.setItem("theme", newTheme);
+
+    // Aplica ou remove a classe "dark" no <html>
+    if (newTheme === "dark") {
       document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   };
 
