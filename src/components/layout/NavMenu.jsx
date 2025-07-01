@@ -53,14 +53,14 @@ export const NavMenu = () => {
           Paciente
         </Link>
         <Link
-          to="/"
+          to="/agenda-medico"
           className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-200 ease-in-out"
         >
           <FaCalendarAlt className="mr-3 text-lg" />
           Agenda do Médico
         </Link>
         <Link
-          to="/"
+          to="/agenda-paciente"
           className="flex items-center py-2 px-4 rounded-lg text-white hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] transition-all duration-200 ease-in-out"
         >
           <FaCalendarAlt className="mr-3 text-lg" />
