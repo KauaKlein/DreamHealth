@@ -4,6 +4,7 @@ import {
   FaCalendarAlt,
   FaChartBar,
 } from "react-icons/fa";
+import { Consulta } from "../components/Graficos/Consultas/Consulta";
 
 export const DashBoardPage = () => {
   return (
@@ -14,24 +15,24 @@ export const DashBoardPage = () => {
             Dashboard
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 mb-6">
-            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-5 pb-10 pt-10 flex items-center justify-between transition-all transform hover:scale-105 duration-400">
+            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-5 pb-10 pt-10 flex items-center justify-between transition-all transform duration-400">
               <div className="">
                 <div className="text-[var(--color-text)] text-sm">Médicos</div>
                 <div className="text-3xl font-bold text-[var(--color-text-secondary)]">
-                  14
+                  25
                 </div>
               </div>
               <div className="bg-green-100 text-green-600 p-3 rounded-full">
                 <FaUserMd className="h-7 w-7" />
               </div>
             </div>
-            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-5 pb-10 pt-10 flex items-center justify-between transition-all transform hover:scale-105 duration-400">
+            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-5 pb-10 pt-10 flex items-center justify-between transition-all transform duration-400">
               <div>
                 <div className="text-[var(--color-text)] text-sm">
                   Pacientes
                 </div>
                 <div className="text-3xl font-bold text-[var(--color-text-secondary)]">
-                  1
+                  78
                 </div>
               </div>
               <div className="bg-indigo-100 text-indigo-600 p-3 rounded-full">
@@ -39,13 +40,13 @@ export const DashBoardPage = () => {
               </div>
             </div>
 
-            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-5 pb-10 pt-10 flex items-center justify-between transition-all transform hover:scale-105 duration-400">
+            <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-5 pb-10 pt-10 flex items-center justify-between transition-all transform duration-400">
               <div>
                 <div className="text-[var(--color-text)] text-sm">
                   Consultas
                 </div>
                 <div className="text-3xl font-bold text-[var(--color-text-secondary)]">
-                  3
+                  257
                 </div>
               </div>
               <div className="bg-yellow-100 text-yellow-600 p-3 rounded-full">
@@ -54,13 +55,13 @@ export const DashBoardPage = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
-          <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-[var(--color-text)] mb-4">
-              Usuários Cadastrados:
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          <div className="flex bg-[var(--color-bg-secondary)] h-[348px] flex-col shadow-md rounded-lg p-8">
+            <h3 className="text-xl h-[10%] font-semibold text-[var(--color-text)]">
+              Consultas:
             </h3>
-            <div className="h-64 rounded-md flex items-center justify-center ">
-              <FaChartBar className="text-5xl text-[var(--color-text-secondary)]" />
+            <div className="rounded-md flex items-center h-[90%] justify-center">
+              <Consulta/>
             </div>
           </div>
           <div className="bg-[var(--color-bg-secondary)] shadow-md rounded-lg p-6">
