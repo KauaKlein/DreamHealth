@@ -5,8 +5,29 @@ import {
   FaChartBar,
 } from "react-icons/fa";
 import { Consulta } from "../components/Graficos/Consultas/Consulta";
+import { useState, useEffect } from "react";
+import { buscarUsuarios } from "../api/crudUsuarios/getUsuariosApi";
+         
 
 export const DashBoardPage = () => {
+  const [pacientes, setPacientes] = useState([]);
+  const [meidicos, setMedicos] = useState([]);
+  
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      try {
+        const dataPacientes = await buscarUsuarios("pacientes");
+        setPacientes(dataPacientes);
+        const dataMedicos = await buscarUsuarios("medicos");
+        setMedicos(dataMedicos);
+      } catch (error) {
+        console.error("Erro ao buscar usuários:", error);
+      }
+    };
+  
+    fetchUsuarios();
+  }, []);
+
   return (
     <div className="min-h-screen flex font-sans sm:mt-15 md:mt-15 lg:mt-0 xl:mt-0 mt-15">
       <div className="flex-grow p-6">
@@ -19,7 +40,7 @@ export const DashBoardPage = () => {
               <div className="">
                 <div className="text-[var(--color-text)] text-sm">Médicos</div>
                 <div className="text-3xl font-bold text-[var(--color-text-secondary)]">
-                  25
+                  {meidicos.length}
                 </div>
               </div>
               <div className="bg-green-100 text-green-600 p-3 rounded-full">
@@ -32,7 +53,7 @@ export const DashBoardPage = () => {
                   Pacientes
                 </div>
                 <div className="text-3xl font-bold text-[var(--color-text-secondary)]">
-                  78
+                  {pacientes.length}
                 </div>
               </div>
               <div className="bg-indigo-100 text-indigo-600 p-3 rounded-full">
