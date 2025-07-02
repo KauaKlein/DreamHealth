@@ -190,7 +190,7 @@ export const deleteMedico = async (req, res) => {
 //consultas
 export const getConsultas = async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM consulta');
+    const result = await pool.query('SELECT * FROM consultas');
     res.status(200).json(result.rows);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -198,12 +198,13 @@ export const getConsultas = async (req, res) => {
 };
 
 export const postConsulta = async (req, res) => {
-  const { id_medico, id_paciente, data_consulta, descricao } = req.body;
+  const { id_medico, id_paciente, data_consulta, descricao, estado } = req.body;
   const desc = descricao || 'consulta geral';
+  const status = estado || 'pendente'; // Define um valor padrão para estado
   try {
     const result = await pool.query(
-      'INSERT INTO consultas (id_medico, id_paciente, data_consulta, descricao) VALUES ($1, $2, $3, $4) RETURNING *',
-      [id_medico, id_paciente, data_consulta, desc]
+      'INSERT INTO consultas (id_medico, id_paciente, data_consulta, descricao, estado) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [id_medico, id_paciente, data_consulta, desc, status]
     );
     res.status(201).json(result.rows[0]);
   } catch (error) {
@@ -213,11 +214,11 @@ export const postConsulta = async (req, res) => {
 
 export const putConsulta = async (req, res) => {
   const { id } = req.params;
-  const { id_medico, id_paciente, data_consulta, descricao } = req.body;
+  const { id_medico, id_paciente, data_consulta, descricao, estado } = req.body;
   try {
     const result = await pool.query(
-      'UPDATE consultas SET id_medico = $1, id_paciente = $2, data_consulta = $3, descricao = $4 WHERE id_consulta = $5 RETURNING *',
-      [id_medico, id_paciente, data_consulta, descricao, id]
+      'UPDATE consultas SET id_medico = $1, id_paciente = $2, data_consulta = $3, descricao = $4, estado = $5 WHERE id_consulta = $6 RETURNING *',
+      [id_medico, id_paciente, data_consulta, descricao, estado, id]
     );
     res.status(200).json(result.rows[0]);
   } catch (error) {

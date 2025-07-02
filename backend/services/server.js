@@ -1,4 +1,6 @@
 import express from 'express';
+import cors from 'cors';
+
 import {
   getUsuarios, postUsuario, putUsuario, deleteUsuario,
   getEnderecos, postEndereco, putEndereco, deleteEndereco, postUsuarioEndereco,
@@ -11,6 +13,7 @@ import {
 const app = express();
 const port = 3000;
 
+app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
 
 // Usuários
@@ -52,4 +55,4 @@ app.delete('/atendentes/:id', deleteAtendente);
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
-}); 
+});
