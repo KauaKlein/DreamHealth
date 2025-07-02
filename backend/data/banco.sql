@@ -55,5 +55,6 @@ CREATE TABLE consultas (
 	id_medico int NOT NULL,
 	id_paciente int NOT NULL,
 	FOREIGN KEY (id_medico) REFERENCES medico(id_medico) ON DELETE CASCADE,
-	FOREIGN KEY (id_paciente) REFERENCES paciente(id_paciente) ON DELETE CASCADE
+	FOREIGN KEY (id_paciente) REFERENCES paciente(id_paciente) ON DELETE CASCADE,
+	estado varchar(sei la quanto) not null talvez
 );

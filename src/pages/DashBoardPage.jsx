@@ -11,15 +11,18 @@ import { buscarUsuarios } from "../api/crudUsuarios/getUsuariosApi";
 
 export const DashBoardPage = () => {
   const [pacientes, setPacientes] = useState([]);
-  const [meidicos, setMedicos] = useState([]);
+  const [medicos, setMedicos] = useState([]);
+  const [consultas, setConsultas] = useState([]);
   
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
-        const dataPacientes = await buscarUsuarios("pacientes");
-        setPacientes(dataPacientes);
         const dataMedicos = await buscarUsuarios("medicos");
         setMedicos(dataMedicos);
+        const dataPacientes = await buscarUsuarios("pacientes");
+        setPacientes(dataPacientes);
+        const dataConsultas = await buscarUsuarios("consultas");
+        setConsultas(dataConsultas);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error);
       }
@@ -40,7 +43,7 @@ export const DashBoardPage = () => {
               <div className="">
                 <div className="text-[var(--color-text)] text-sm">Médicos</div>
                 <div className="text-3xl font-bold text-[var(--color-text-secondary)]">
-                  {meidicos.length}
+                  {medicos.length}
                 </div>
               </div>
               <div className="bg-green-100 text-green-600 p-3 rounded-full">
@@ -67,7 +70,7 @@ export const DashBoardPage = () => {
                   Consultas
                 </div>
                 <div className="text-3xl font-bold text-[var(--color-text-secondary)]">
-                  257
+                  {consultas.length}
                 </div>
               </div>
               <div className="bg-yellow-100 text-yellow-600 p-3 rounded-full">
