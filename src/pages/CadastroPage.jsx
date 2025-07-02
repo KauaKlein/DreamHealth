@@ -13,8 +13,7 @@ export const CadastroPage = () => {
     e.preventDefault();
 
     try {
-      registerSchema.parse({ email, password, confirmPassword });
-
+      registerSchema.parse({ nome, email, password, confirmPassword });
       setErrors({});
     } catch (validationError) {
       const newErrors = {};
