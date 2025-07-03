@@ -8,9 +8,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { faker } from "@faker-js/faker";
-//É só para gerar números aleatórios para os dados do gráfico
 import { useState, useEffect } from "react";
+import { consultasMes } from "../../../utils/consultasMes";
 
 ChartJS.register(
   CategoryScale,
@@ -22,59 +21,60 @@ ChartJS.register(
 );
 //Registrar oq foi importado, se não reclama
 
-const meses = [
-  "Janeiro",
-  "Fevereiro",
-  "Março",
-  "Abril",
-  "Maio",
-  "Junho",
-  "Julho",
-  "Agosto",
-  "Setembro",
-  "Outubro",
-  "Novembro",
-  "Dezembro",
-];
-
-const CortaMeses = (quantidade) => {
-  //Quantidade é a quantidade de meses antes e depois que serao adicionados
-  const mesAtual = new Date().getMonth();
-  return meses.slice(mesAtual - quantidade, 1 + mesAtual + quantidade);
-};
-
 export const Consulta = () => {
-  const [labels, setLabels] = useState(meses);
+  const [graficos, setGraficos] = useState([]);
+  const [labels, setLabels] = useState(graficos);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
+    //Pega dados do grafico do banc
+    const fetchGraficos = async () => {
+      const graficosData = await consultasMes();
+      setGraficos(graficosData);
+      setLabels(graficosData.map((e) => e.mes));
+    };
+    fetchGraficos();
+  }, []);
+
+  // Função síncrona para cortar meses baseada no estado atual de graficos
+  const cortaMeses = (quantidade) => {
+    const mesAtual = new Date().getMonth();
+    return graficos.slice(
+      Math.max(0, mesAtual - quantidade),
+      //Não deixa o index ficar negativo, se o mes atual for janeiro, ele so vai pegar os primeiros
+      Math.min(graficos.length, 1 + mesAtual + quantidade)
+      //Mesma coisa do de cima mas se for dezembro ele so pega os anteriores
+    )
+      .map((e) => e.mes);
+  };
+
+  // Atualiza os labels conforme o tamanho da tela ou quando graficos muda
+  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 300) {
-        setLabels(CortaMeses(0));
+        setLabels(cortaMeses(0));
       } else if (window.innerWidth <= 400) {
-        setLabels(CortaMeses(1));
+        setLabels(cortaMeses(1));
       } else if (window.innerWidth <= 500) {
-        setLabels(CortaMeses(2));
+        setLabels(cortaMeses(2));
       } else if (window.innerWidth <= 800) {
-        setLabels(CortaMeses(3));
+        setLabels(cortaMeses(3));
       } else if (window.innerWidth <= 1000) {
-        setLabels(CortaMeses(4));
+        setLabels(cortaMeses(4));
       } else {
-        setLabels(meses);
+        setLabels(graficos.map((e) => e.mes));
       }
     };
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [graficos]);
 
   useEffect(() => {
     const checkDarkMode = () => {
       // Verifica se a classe "dark" está presente no elemento raiz
       setIsDarkMode(document.documentElement.classList.contains("dark"));
     };
-
-    // Verifica o modo ao montar o componente
     checkDarkMode();
 
     // Adiciona um listener para monitorar mudanças na classe "dark"
@@ -90,19 +90,18 @@ export const Consulta = () => {
     datasets: [
       {
         label: "Realizadas",
-        data: labels.map(() => faker.number.int({ min: 30, max: 80 })),
-        //É onde bota o valor, neste caso, esta gerando um número aleatório
+        data: graficos.map((e) => e.quantidade.Realizadas),
         backgroundColor: isDarkMode ? "#4A90E2" : "#36A2EB", // Cor muda com base no modo
         borderWidth: 1,
       },
       {
         label: "A Realizar",
-        data: labels.map(() => faker.number.int({ min: 40, max: 70 })),
+        data: graficos.map((e) => e.quantidade.Arealizar),
         backgroundColor: "#FF6384",
       },
       {
         label: "Canceladas",
-        data: labels.map(() => faker.number.int({ min: 10, max: 40 })),
+        data: graficos.map((e) => e.quantidade.Canceladas),
         backgroundColor: "#FFCE56",
       },
     ],
@@ -122,18 +121,18 @@ export const Consulta = () => {
     scales: {
       x: {
         ticks: {
-          color: isDarkMode ? "#FFF" : "#000", // Cor das labels no eixo X
+          color: isDarkMode ? "#FFF" : "#000",
         },
         grid: {
-          color: isDarkMode ? "#999999" : "#222", // Cor das linhas da grade no eixo X
+          color: isDarkMode ? "#999999" : "#222",
         },
       },
       y: {
         ticks: {
-          color: isDarkMode ? "#e0e0e0" : "#000", // Cor das labels no eixo Y
+          color: isDarkMode ? "#e0e0e0" : "#000",
         },
         grid: {
-          color: isDarkMode ? "#999999" : "#222", // Cor das linhas da grade no eixo Y
+          color: isDarkMode ? "#999999" : "#222",
         },
       },
     },

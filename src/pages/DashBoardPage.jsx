@@ -7,7 +7,6 @@ import {
 import { Consulta } from "../components/Graficos/Consultas/Consulta";
 import { useState, useEffect } from "react";
 import { buscarUsuarios } from "../api/crudUsuarios/getUsuariosApi";
-         
 
 export const DashBoardPage = () => {
   const [pacientes, setPacientes] = useState([]);
