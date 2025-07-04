@@ -23,20 +23,19 @@ ChartJS.register(
 
 export const Consulta = () => {
   const [graficos, setGraficos] = useState([]);
-  const [labels, setLabels] = useState(graficos);
+  const [labels, setLabels] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    //Pega dados do grafico do banc
+    //Pega dados do grafico do banco
     const fetchGraficos = async () => {
       const graficosData = await consultasMes();
       setGraficos(graficosData);
-      setLabels(graficosData.map((e) => e.mes));
     };
     fetchGraficos();
+
   }, []);
 
-  // Função síncrona para cortar meses baseada no estado atual de graficos
   const cortaMeses = (quantidade) => {
     const mesAtual = new Date().getMonth();
     return graficos.slice(
@@ -44,8 +43,7 @@ export const Consulta = () => {
       //Não deixa o index ficar negativo, se o mes atual for janeiro, ele so vai pegar os primeiros
       Math.min(graficos.length, 1 + mesAtual + quantidade)
       //Mesma coisa do de cima mas se for dezembro ele so pega os anteriores
-    )
-      .map((e) => e.mes);
+    );
   };
 
   // Atualiza os labels conforme o tamanho da tela ou quando graficos muda
@@ -62,7 +60,7 @@ export const Consulta = () => {
       } else if (window.innerWidth <= 1000) {
         setLabels(cortaMeses(4));
       } else {
-        setLabels(graficos.map((e) => e.mes));
+        setLabels(graficos);
       }
     };
     window.addEventListener("resize", handleResize);
@@ -86,22 +84,22 @@ export const Consulta = () => {
   }, []);
 
   const data = {
-    labels,
+    labels: labels.map((e) => e.mes),
     datasets: [
       {
         label: "Realizadas",
-        data: graficos.map((e) => e.quantidade.Realizadas),
+        data: labels.map((e) => e.quantidade.Realizadas),
         backgroundColor: isDarkMode ? "#4A90E2" : "#36A2EB", // Cor muda com base no modo
         borderWidth: 1,
       },
       {
         label: "A Realizar",
-        data: graficos.map((e) => e.quantidade.Arealizar),
+        data: labels.map((e) => e.quantidade.Arealizar),
         backgroundColor: "#FF6384",
       },
       {
         label: "Canceladas",
-        data: graficos.map((e) => e.quantidade.Canceladas),
+        data: labels.map((e) => e.quantidade.Canceladas),
         backgroundColor: "#FFCE56",
       },
     ],

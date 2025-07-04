@@ -5,51 +5,51 @@ export async function consultasMes() {
   const grafico = [
     {
       mes: "Janeiro",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Fevereiro",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Março",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Abril",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Maio",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Junho",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Julho",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Agosto",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Setembro",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Outubro",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Novembro",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
     {
       mes: "Dezembro",
-      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0, Total: 0 },
+      quantidade: { Realizadas: 0, Arealizar: 0, Canceladas: 0},
     },
   ];
   consultas.map((e) => {
@@ -57,7 +57,7 @@ export async function consultasMes() {
     //Recebe o valor de cada consulta, deixa apenas o mes e transforma em inteiro
     //- 1 é pq o index de array começa em 0 e dessa foram considero Janeiro como 0
     switch(e.estado) {
-        case "Realizada":
+        case "Realizadas":
             grafico[indexMes].quantidade.Realizadas += 1;
             break;
         case "A Realizar":
